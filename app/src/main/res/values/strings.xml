@@ -2,4 +2,16 @@
     <string name="app_name">TourPartnerApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tour_title">Name your tour</string>
+    <string name="destination">Where to go?</string>
+    <string name="your_initial_budget">Your Initial Budget</string>
+    <string name="create">CREATE</string>
+    <string name="location_alert">Location Alert</string>
+    <string name="login">Login</string>
+    <string name="new_tour">New Tour</string>
+    <string name="tour_details">Tour Details</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="new_user">New User?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

@@ -9,5 +9,22 @@
         android:id="@+id/launcherFragment"
         android:name="com.nurhossain.tourpartnerapp.ui.LauncherFragment"
         android:label="fragment_launcher"
-        tools:layout="@layout/fragment_launcher" />
+        tools:layout="@layout/fragment_launcher" >
+        <action
+            android:id="@+id/tour_list_action"
+            app:destination="@id/tourFragment" />
+        <action
+            android:id="@+id/login_action"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tourFragment"
+        android:name="com.nurhossain.tourpartnerapp.ui.TourFragment"
+        android:label="fragment_tour"
+        tools:layout="@layout/fragment_tour" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.nurhossain.tourpartnerapp.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
