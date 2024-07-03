@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367829620014",
+    "project_id": "tourpartnerapp",
+    "storage_bucket": "tourpartnerapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367829620014:android:18c3ed42bde0316d0a16bf",
+        "android_client_info": {
+          "package_name": "com.nurhossain.tourpartnerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF4VKwvhRIebwIMmeEA43EBhAQJYUjpXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
