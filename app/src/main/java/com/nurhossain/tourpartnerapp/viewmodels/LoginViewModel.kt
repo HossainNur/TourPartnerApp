@@ -9,11 +9,15 @@ class LoginViewModel : ViewModel() {
         AUTHENTICATED, UNAUTHENTICATED
     }
     private val auth = FirebaseAuth.getInstance()
+    var user = auth.currentUser
 
     var errMsgLiveData: MutableLiveData<String> = MutableLiveData()
     val authStatusLiveData: MutableLiveData<AuthenticationStatus> = MutableLiveData()
 
     init {
+        user?.let {
+            authStatusLiveData.postValue(AuthenticationStatus.AUTHENTICATED)
+        } ?: authStatusLiveData.postValue(AuthenticationStatus.UNAUTHENTICATED)
 
     }
 

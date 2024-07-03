@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.TourPartnerApp" parent="Base.Theme.TourPartnerApp" />
+
+    <style name="Theme.TourPartnerApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TourPartnerApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TourPartnerApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
