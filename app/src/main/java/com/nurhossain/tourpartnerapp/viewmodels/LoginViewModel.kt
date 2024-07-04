@@ -8,6 +8,7 @@ class LoginViewModel : ViewModel() {
     enum class AuthenticationStatus {
         AUTHENTICATED, UNAUTHENTICATED
     }
+
     private val auth = FirebaseAuth.getInstance()
     var user = auth.currentUser
 
@@ -22,11 +23,25 @@ class LoginViewModel : ViewModel() {
     }
 
     fun login(email: String, password: String) {
-
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    authStatusLiveData.postValue(AuthenticationStatus.AUTHENTICATED)
+                }
+            }.addOnFailureListener {
+                errMsgLiveData.value = it.localizedMessage
+            }
     }
 
     fun register(email: String, password: String) {
-
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    authStatusLiveData.postValue(AuthenticationStatus.AUTHENTICATED)
+                }
+            }.addOnFailureListener {
+                errMsgLiveData.value = it.localizedMessage
+            }
     }
 
     fun isUserValid() = false
