@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.nurhossain.tourpartnerapp.R
 import com.nurhossain.tourpartnerapp.databinding.FragmentTourBinding
 
@@ -20,6 +21,9 @@ class TourFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentTourBinding.inflate(inflater, container, false)
+        binding.newTourFab.setOnClickListener {
+            findNavController().navigate(R.id.newTourFragment)
+        }
         return binding.root
     }
 }

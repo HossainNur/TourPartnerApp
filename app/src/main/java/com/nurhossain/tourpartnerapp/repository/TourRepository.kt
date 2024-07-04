@@ -12,6 +12,14 @@ class TourRepository {
     val db = Firebase.firestore
 
     fun addTour(tourModel: TourModel) {
+        val docRef = db.collection(collection_tour).document()
+        tourModel.id = docRef.id
+        docRef.set(tourModel)
+            .addOnSuccessListener {
+
+            }.addOnFailureListener {
+
+            }
 
     }
 
