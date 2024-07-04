@@ -21,10 +21,18 @@
         android:id="@+id/tourFragment"
         android:name="com.nurhossain.tourpartnerapp.ui.TourFragment"
         android:label="fragment_tour"
-        tools:layout="@layout/fragment_tour" />
+        tools:layout="@layout/fragment_tour" >
+        <action
+            android:id="@+id/action_tourFragment_to_newTourFragment"
+            app:destination="@id/newTourFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.nurhossain.tourpartnerapp.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/newTourFragment"
+        android:name="com.nurhossain.tourpartnerapp.ui.NewTourFragment"
+        android:label="NewTourFragment" />
 </navigation>

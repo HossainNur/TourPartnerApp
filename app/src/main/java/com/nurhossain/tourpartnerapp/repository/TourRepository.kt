@@ -12,6 +12,14 @@ class TourRepository {
     val db = Firebase.firestore
 
     fun addTour(tourModel: TourModel) {
+        val docRef = db.collection(collection_tour).document()
+        tourModel.id = docRef.id
+        docRef.set(tourModel)
+            .addOnSuccessListener {
+
+            }.addOnFailureListener {
+
+            }
 
     }
 
@@ -29,6 +37,19 @@ class TourRepository {
 
     fun getToursByUser(userId: String) : LiveData<List<TourModel>> {
         val tourListLiveData = MutableLiveData<List<TourModel>>()
+
+        db.collection(collection_tour)
+            .whereEqualTo("UserId",userId)
+            .addSnapshotListener { value, error ->
+                if (error != null){
+                    return@addSnapshotListener
+                }
+                val  temp = ArrayList<TourModel>()
+                for (doc in value!!){
+                    temp.add(doc.toObject(TourModel::class.java))
+                }
+                tourListLiveData.postValue(temp)
+            }
 
         return tourListLiveData
     }
